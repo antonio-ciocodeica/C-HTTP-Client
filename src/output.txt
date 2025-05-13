@@ -1,0 +1,61 @@
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 13 May 2025 21:11:44 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 43
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=.eJyrVkpMyc3Miy8tTi2Kz0xRsjIxMNRRKsrPSVWygkgp6SiBJPMSc8FCeSX5eZn5esmZ-cn5KamZyYlKtQAc1Bd_.aCO1kA.woLu5ADGVzPK_7Wtuy_0i_9nvFU; HttpOnly; Path=/
+
+{"message":"Admin logged in successfully"}
+
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 13 May 2025 21:11:49 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 384
+Access-Control-Allow-Origin: *
+Vary: Cookie
+
+{"users":[{"id":6889,"password":"695546729870ae4f8a08","username":"test_1747158456_9Cgt7o"},{"id":6892,"password":"81af4d7880ee4fa2fb9b","username":"test_1747159554_AOTn62"},{"id":6924,"password":"695546729870ae4f8a08a","username":"test_1747158456_9Cgt7oa"},{"id":6948,"password":"31740815cc8de9c2f235","username":"test_1747160579_OL65Oa"},{"id":6945,"password":"b","username":"a"}]}
+
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 13 May 2025 21:11:51 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 44
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDF9.aCO1lw.usf5qYCzLeDXcQzsap6NWob-atY; HttpOnly; Path=/
+
+{"message":"Admin logged out successfully"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 13 May 2025 21:11:58 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 42
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCO1ng.HPSmVdO3-Tzgy8RyAw0z_hOeuoM; HttpOnly; Path=/
+
+{"message":"User logged in successfully"}
+
+HTTP/1.1 403 FORBIDDEN
+Server: gunicorn
+Date: Tue, 13 May 2025 21:12:01 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 38
+Access-Control-Allow-Origin: *
+Vary: Cookie
+
+{"error":"Admin privileges required"}
+
+
