@@ -1,61 +1,45 @@
 HTTP/1.1 200 OK
 Server: gunicorn
-Date: Tue, 13 May 2025 21:11:44 GMT
-Connection: keep-alive
-Content-Type: application/json
-Content-Length: 43
-Access-Control-Allow-Origin: *
-Vary: Cookie
-Set-Cookie: session=.eJyrVkpMyc3Miy8tTi2Kz0xRsjIxMNRRKsrPSVWygkgp6SiBJPMSc8FCeSX5eZn5esmZ-cn5KamZyYlKtQAc1Bd_.aCO1kA.woLu5ADGVzPK_7Wtuy_0i_9nvFU; HttpOnly; Path=/
-
-{"message":"Admin logged in successfully"}
-
-
-HTTP/1.1 200 OK
-Server: gunicorn
-Date: Tue, 13 May 2025 21:11:49 GMT
-Connection: keep-alive
-Content-Type: application/json
-Content-Length: 384
-Access-Control-Allow-Origin: *
-Vary: Cookie
-
-{"users":[{"id":6889,"password":"695546729870ae4f8a08","username":"test_1747158456_9Cgt7o"},{"id":6892,"password":"81af4d7880ee4fa2fb9b","username":"test_1747159554_AOTn62"},{"id":6924,"password":"695546729870ae4f8a08a","username":"test_1747158456_9Cgt7oa"},{"id":6948,"password":"31740815cc8de9c2f235","username":"test_1747160579_OL65Oa"},{"id":6945,"password":"b","username":"a"}]}
-
-
-HTTP/1.1 200 OK
-Server: gunicorn
-Date: Tue, 13 May 2025 21:11:51 GMT
-Connection: keep-alive
-Content-Type: application/json
-Content-Length: 44
-Access-Control-Allow-Origin: *
-Vary: Cookie
-Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDF9.aCO1lw.usf5qYCzLeDXcQzsap6NWob-atY; HttpOnly; Path=/
-
-{"message":"Admin logged out successfully"}
-
-HTTP/1.1 200 OK
-Server: gunicorn
-Date: Tue, 13 May 2025 21:11:58 GMT
+Date: Wed, 14 May 2025 00:31:48 GMT
 Connection: keep-alive
 Content-Type: application/json
 Content-Length: 42
 Access-Control-Allow-Origin: *
 Vary: Cookie
-Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCO1ng.HPSmVdO3-Tzgy8RyAw0z_hOeuoM; HttpOnly; Path=/
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCPkdA.YJ7Y60tNXfrMLViL6nqRG16Ep5k; HttpOnly; Path=/
 
 {"message":"User logged in successfully"}
 
-HTTP/1.1 403 FORBIDDEN
+HTTP/1.1 401 UNAUTHORIZED
 Server: gunicorn
-Date: Tue, 13 May 2025 21:12:01 GMT
+Date: Wed, 14 May 2025 00:31:52 GMT
 Connection: keep-alive
 Content-Type: application/json
-Content-Length: 38
+Content-Length: 31
+Access-Control-Allow-Origin: *
+
+{"error":"JWT token required"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:31:55 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 185
 Access-Control-Allow-Origin: *
 Vary: Cookie
 
-{"error":"Admin privileges required"}
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhIiwiZG9tIjo0MDEsImlhdCI6MTc0NzE4MjcxNS45NTYwNSwiZXhwIjoxNzQ3MTgzMzE1Ljk1NjAzOX0.jHR71n9xibHJdynB_PtDwQi36rzJU4t_uqugzYTIQjY"}
 
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:31:59 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 63
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCPkfw.T-X0du19qUtuNLuPQF8BHrcu2dM; HttpOnly; Path=/
+
+{"collections":[{"id":2863,"owner":"a","title":"colectie A"}]}
 

@@ -28,10 +28,8 @@ char *basic_extract_json_response(char *str);
 // extracts a cookie from a server response
 char *extract_cookie(char *str);
 
-// extracts a key from a server response
-char *extract_key(char *str);
+// extracts a JWT token from a server response
+char *extract_jwt(char *str);
 
-// returns the IP address of host
-char *get_ip_address(char *hostname);
 
 #endif

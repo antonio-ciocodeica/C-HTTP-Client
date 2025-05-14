@@ -137,7 +137,6 @@ char *extract_cookie(char *str) {
     }
 
     start += strlen("Set-Cookie: ");
-
     char *end = strchr(start, ';');
     int size;
 
@@ -150,4 +149,25 @@ char *extract_cookie(char *str) {
     char *cookie = calloc(size, sizeof(char));
     strncpy(cookie, start, size);
     return cookie;
+}
+
+char *extract_jwt(char *str) {
+    char *start = strstr(str, "{\"token\":\"");
+    if (start == NULL) {
+        return NULL;
+    }
+
+    start += strlen("{\"token\":\"");
+    char *end = strchr(start, '\"');
+    int size;
+
+    if (end == NULL) {
+        size = strlen(start);
+    } else {
+        size = end - start;
+    }
+
+    char *jwt = calloc(size, sizeof(char));
+    strncpy(jwt, start, size);
+    return jwt;
 }

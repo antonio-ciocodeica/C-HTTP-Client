@@ -4,7 +4,7 @@ VENV = .venv
 VENV_PYTHON3 = $(VENV)/bin/python3
 
 ADMIN ?= test:testpass
-PROGRAM ?= ../client
+PROGRAM ?= src/client
 
 all: venv deps
 
@@ -17,5 +17,5 @@ deps: venv
 
 A ?= --debug --admin "$(ADMIN)"
 run:
+	cd src && make && cd ..
 	$(VENV_PYTHON3) checker.py $(PROGRAM) $(A)
-

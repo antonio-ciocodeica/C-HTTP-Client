@@ -10,7 +10,7 @@
 #include "requests.h"
 
 char *compute_get_request(char *host, char *url, char *query_params,
-                            char **cookies, int cookies_count)
+                            char **cookies, int cookies_count, char *jwt)
 {
     char *message = calloc(BUFLEN, sizeof(char));
     char *line = calloc(LINELEN, sizeof(char));
@@ -41,6 +41,12 @@ char *compute_get_request(char *host, char *url, char *query_params,
         compute_message(message, line);
     }
 
+    if (jwt != NULL) {
+        sprintf(line, "Authorization: Bearer ");
+        strcat(line, jwt);
+        compute_message(message, line);
+    }
+
     // Step 4: add final new line
     compute_message(message, "");
     free(line);
@@ -48,7 +54,7 @@ char *compute_get_request(char *host, char *url, char *query_params,
 }
 
 char *compute_post_request(char *host, char *url, char* content_type, char **body_data,
-                            int body_data_fields_count, char **cookies, int cookies_count)
+                            int body_data_fields_count, char **cookies, int cookies_count, char *jwt)
 {
     char *message = calloc(BUFLEN, sizeof(char));
     char *line = calloc(LINELEN, sizeof(char));
@@ -89,6 +95,12 @@ char *compute_post_request(char *host, char *url, char* content_type, char **bod
         }
 
         strcat(line, cookies[cookies_count - 1]);
+        compute_message(message, line);
+    }
+
+    if (jwt != NULL) {
+        sprintf(line, "Authorization: Bearer ");
+        strcat(line, jwt);
         compute_message(message, line);
     }
 

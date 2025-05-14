@@ -1,0 +1,249 @@
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:10 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 43
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=.eJyrVkpMyc3Miy8tTi2Kz0xRsjIxMNRRKsrPSVWygkgp6SiBJPMSc8FCeSX5eZn5esmZ-cn5KamZyYlKtQAc1Bd_.aCPkig.udC5CedRYfqnwp0CeiVg1OjJU6Q; HttpOnly; Path=/
+
+{"message":"Admin logged in successfully"}
+
+
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:11 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 76
+Access-Control-Allow-Origin: *
+Vary: Cookie
+
+{"message":"User created successfully","username":"test_1747182728_PeLOYv"}
+
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:11 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 762
+Access-Control-Allow-Origin: *
+Vary: Cookie
+
+{"users":[{"id":6889,"password":"695546729870ae4f8a08","username":"test_1747158456_9Cgt7o"},{"id":6892,"password":"81af4d7880ee4fa2fb9b","username":"test_1747159554_AOTn62"},{"id":7880,"password":"594f2604e1bf8ee69b4c","username":"test_1747177101_wyA3NC"},{"id":7903,"password":"c62cd89c4ebf0abbf5f8","username":"test_1747180583_UrmriI"},{"id":7891,"password":"36d7901d58953404d0b9","username":"test_1747178518_r423v0"},{"id":6924,"password":"695546729870ae4f8a08a","username":"test_1747158456_9Cgt7oa"},{"id":6948,"password":"31740815cc8de9c2f235","username":"test_1747160579_OL65Oa"},{"id":7924,"password":"0c69c4d264470f2b35b7","username":"test_1747182728_PeLOYv"},{"id":6945,"password":"b","username":"a"},{"id":7743,"password":"abc","username":"antonio"}]}
+
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:12 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 44
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDF9.aCPkjA.nL7-qjdHrLGGDvjGqlx2J854FJ0; HttpOnly; Path=/
+
+{"message":"Admin logged out successfully"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:12 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 42
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkjA.U2z_WAZKHHumSeQsfkg38ctXngU; HttpOnly; Path=/
+
+{"message":"User logged in successfully"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:12 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 210
+Access-Control-Allow-Origin: *
+Vary: Cookie
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2IiwiZG9tIjo0MDEsImlhdCI6MTc0NzE4MjczMi44MTYzMSwiZXhwIjoxNzQ3MTgzMzMyLjgxNjN9.7REErqR2C4nrXSrTELziWE0_FAk5t5o9DIDBwT9NjIg"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:13 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 43
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; HttpOnly; Path=/
+
+{"message":"User logged out successfully"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:13 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 42
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkjQ.RbCYrTzKNsQY722tUD8wcCjLLZM; HttpOnly; Path=/
+
+{"message":"User logged in successfully"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:13 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 214
+Access-Control-Allow-Origin: *
+Vary: Cookie
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2IiwiZG9tIjo0MDEsImlhdCI6MTc0NzE4MjczMy41NDk2MTEsImV4cCI6MTc0NzE4MzMzMy41NDk2MDF9.mng-5Es58pJaTrntclyP_MyuKp3GjiXE4Fu1VP-gy0Q"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:13 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 14
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkjQ.RbCYrTzKNsQY722tUD8wcCjLLZM; HttpOnly; Path=/
+
+{"movies":[]}
+
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:15 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 144
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkjw.nEIKDVvSK9D3lDUF-vlNgWQ3TQo; HttpOnly; Path=/
+
+{"description":"Batman saves the world, Joker dies IRL, oh wait","id":9879,"rating":"9.0","title":"The Dark Knight","user_id":7924,"year":2008}
+
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:15 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 159
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkjw.nEIKDVvSK9D3lDUF-vlNgWQ3TQo; HttpOnly; Path=/
+
+{"description":"Nostradamus was so wrong... this nails it pretty well for our future","id":9880,"rating":"6.5","title":"Idiocracy","user_id":7924,"year":2006}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:15 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 83
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkjw.nEIKDVvSK9D3lDUF-vlNgWQ3TQo; HttpOnly; Path=/
+
+{"movies":[{"id":9879,"title":"The Dark Knight"},{"id":9880,"title":"Idiocracy"}]}
+
+HTTP/1.1 404 NOT FOUND
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:16 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 28
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkkA.RAw8P8gisyXBcJaC65Cp88bvEJo; HttpOnly; Path=/
+
+{"error":"Movie not found"}
+
+HTTP/1.1 403 FORBIDDEN
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:17 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 35
+Access-Control-Allow-Origin: *
+
+{"error":"User already logged in"}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:17 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 83
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkkQ.T07SuZ34PQmR-JpEdWZSYTiN2SU; HttpOnly; Path=/
+
+{"movies":[{"id":9879,"title":"The Dark Knight"},{"id":9880,"title":"Idiocracy"}]}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:18 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 19
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkkg.N_LMEPnA40pfu6ho3_IPXM8ZMhA; HttpOnly; Path=/
+
+{"collections":[]}
+
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:19 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 144
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPkkw.0C-pDowlkuTQh3nHTBvlbkTxxck; HttpOnly; Path=/
+
+{"description":"Batman saves the world, Joker dies IRL, oh wait","id":9881,"rating":"9.0","title":"The Dark Knight","user_id":7924,"year":2008}
+
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:20 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 159
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPklA.hYCt8YgbO6IL9rK6d5jF-cl-04M; HttpOnly; Path=/
+
+{"description":"Nostradamus was so wrong... this nails it pretty well for our future","id":9882,"rating":"6.5","title":"Idiocracy","user_id":7924,"year":2006}
+
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:20 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 173
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPklA.hYCt8YgbO6IL9rK6d5jF-cl-04M; HttpOnly; Path=/
+
+{"description":"It's the homework that's never started as takes longest to finish.","id":9883,"rating":"6.5","title":"The Lord of the Rings 1-3","user_id":7924,"year":2001}
+
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Wed, 14 May 2025 00:32:20 GMT
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 201
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJ0ZXN0XzE3NDcxODI3MjhfUGVMT1l2In0.aCPklA.hYCt8YgbO6IL9rK6d5jF-cl-04M; HttpOnly; Path=/
+
+{"movies":[{"id":9883,"title":"The Lord of the Rings 1-3"},{"id":9879,"title":"The Dark Knight"},{"id":9880,"title":"Idiocracy"},{"id":9881,"title":"The Dark Knight"},{"id":9882,"title":"Idiocracy"}]}
+
