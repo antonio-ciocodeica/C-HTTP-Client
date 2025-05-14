@@ -554,14 +554,18 @@ void get_collections(char **cookies, int *cookies_count, char **jwt) {
         // Get the JSON payload of the response
         char *json_collections = strchr(response, '{');
         JSON_Value *json_value = json_parse_string(json_collections);
-        JSON_Array *json_array = json_value_get_array(json_value);
+        JSON_Object *json_object = json_value_get_object(json_value);
+
+        // From the json payload, get the "collections" array
+        JSON_Array *json_array = json_object_get_array(json_object, "collections");
         int coll_count = json_array_get_count(json_array);
 
         // Iterate through the collections array and print their titles
         for (int i = 0; i < coll_count; i++) {
             JSON_Object *collection = json_array_get_object(json_array, i);
+            int id = json_object_get_number(collection, "id");
             const char *title = json_object_get_string(collection, "title");
-            printf("#%d %s\n", i + 1, title);
+            printf("#%d: %s\n", id, title);
         }
 
         json_value_free(json_value);
@@ -578,29 +582,135 @@ void get_collections(char **cookies, int *cookies_count, char **jwt) {
     close_connection(sockfd);
 }
 
-// void add_collection(char **cookies, int *cookies_count, char **jwt) {
-//     char *message;
-//     char *response;
-//     int sockfd;
+void get_collection(char **cookies, int *cookies_count, char **jwt) {
+    char *message;
+    char *response;
+    int sockfd;
 
-//     // Read input
-//     char *title = NULL;
-//     int title_len = 0;
-//     printf("title=");
-//     getchar();
-//     getline(&title, &title_len, stdin);
-//     title[strlen(title) - 1] = '\0';
+    // Read input
+    int id;
+    printf("id=");
+    scanf("%d", &id);
 
-//     int num_movies;
-//     prinf("num_movies=");
-//     scanf("%d", &num_movies);
+    // Compute the path
+    char path[50];
+    sprintf(path, "/api/v1/tema/library/collections/%d", id);
 
+    sockfd = open_connection(ADDRESS, PORT, AF_INET, SOCK_STREAM, 0);
+    message = compute_get_request(ADDRESS, path, NULL, cookies, *cookies_count, *jwt);
+    send_to_server(sockfd, message);
+    response = receive_from_server(sockfd);
 
-//     // Free memory used
-//     free(message);
-//     free(response);
-//     close_connection(sockfd);
-// }
+    fprintf(fout, "%s\n", response);
+    fflush(fout);
+
+    // If the collection was found, print the details
+    if (strstr(response, "HTTP/1.1 200 OK")) {
+        printf("SUCCESS: Detalii colecție\n");
+
+        char *string = strchr(response, '{');
+        JSON_Value *json_value = json_parse_string(string);
+        JSON_Object *json_object = json_value_get_object(json_value);
+
+        // Print the name and owner
+        printf("title: %s\n", json_object_get_string(json_object, "title"));
+        printf("owner: %s\n", json_object_get_string(json_object, "owner"));
+
+        // Get the movies array and movies count
+        JSON_Array *movies = json_object_get_array(json_object, "movies");
+        int count = json_array_get_count(movies);
+
+        // Iterate through the movie list and print each movie
+        for (int i = 0; i < count; i++) {
+            JSON_Object *movie = json_array_get_object(movies, i);
+            int id = json_object_get_number(movie, "id");
+            const char *title = json_object_get_string(movie, "title");
+            printf("#%d: %s\n", id, title);
+        }
+
+        json_value_free(json_value);
+    }
+
+    // Free memory used
+    free(message);
+    free(response);
+    close_connection(sockfd);
+}
+
+void add_collection(char **cookies, int *cookies_count, char **jwt) {
+    char *message;
+    char *response;
+    int sockfd;
+
+    // Read input
+    char *title = NULL;
+    size_t title_len = 0;
+    printf("title=");
+    getchar();
+    getline(&title, &title_len, stdin);
+    title[strlen(title) - 1] = '\0';
+
+    int num_movies;
+    printf("num_movies=");
+    scanf("%d", &num_movies);
+
+    // Init the JSON object, set the "title" value and serialize to string
+    JSON_Value *json_value = json_value_init_object();
+    JSON_Object *json_object = json_value_get_object(json_value);
+    json_object_set_string(json_object, "title", title);
+    char *body_data = json_serialize_to_string(json_value);
+
+    // Compute and send the POST request to create a new collection
+    sockfd = open_connection(ADDRESS, PORT, AF_INET, SOCK_STREAM, 0);
+    message = compute_post_request(ADDRESS, "/api/v1/tema/library/collections", "application/json",
+                                   &body_data, 1, cookies, *cookies_count, *jwt);
+    send_to_server(sockfd, message);
+    response = receive_from_server(sockfd);
+
+    fprintf(fout, "%s\n", response);
+    fflush(fout);
+
+    // Extract the ID of the new collection from the response
+    char *string = strchr(response, '{');
+    json_value = json_parse_string(string);
+    JSON_Object *new_coll = json_value_get_object(json_value);
+    int coll_id = json_object_get_number(new_coll, "id");
+
+    // Compute the path for POST request
+    char path[50];
+    sprintf(path, "/api/v1/tema/library/collections/%d/movies", coll_id);
+
+    // Create the JSON object for the body data
+    JSON_Value *data = json_value_init_object();
+    JSON_Object *obj = json_value_get_object(data);
+        
+    for (int i = 0; i < num_movies; i++) {
+        // Read the movie ID
+        int movie_id;
+        printf("movie_id=");
+        scanf("%d", &movie_id);
+
+        // Set the ID in the JSON object
+        json_object_set_number(obj, "id", movie_id);
+        char *body_data = json_serialize_to_string(data);
+
+        // Send the POST request to add a movie to the new collection
+        message = compute_post_request(ADDRESS, path, "application/json", &body_data, 1,
+                                       cookies, *cookies_count, *jwt);
+        send_to_server(sockfd, message);
+        response = receive_from_server(sockfd);
+
+        fprintf(fout, "%s\n", response);
+        fflush(fout);
+    }
+
+    // Free memory used
+    json_value_free(json_value);
+    json_value_free(data);
+    free(message);
+    free(response);
+    close_connection(sockfd);
+}
 
 int main(int argc, char *argv[])
 {   
@@ -666,13 +776,13 @@ int main(int argc, char *argv[])
             get_collections(cookies, &cookies_count, &jwt);
         }
 
-        // if (!strcmp(command, "get_collection")) {
+        if (!strcmp(command, "get_collection")) {
+            get_collection(cookies, &cookies_count, &jwt);
+        }
 
-        // }
-
-        // if (!strcmp(command, "add_collection")) {
-        //     add_collection(cookies, &cookies_count, &jwt);
-        // }
+        if (!strcmp(command, "add_collection")) {
+            add_collection(cookies, &cookies_count, &jwt);
+        }
     }
 
     return 0;

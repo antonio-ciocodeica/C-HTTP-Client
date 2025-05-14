@@ -1,45 +1,107 @@
 HTTP/1.1 200 OK
-Server: gunicorn
-Date: Wed, 14 May 2025 00:31:48 GMT
-Connection: keep-alive
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:24:07 GMT
 Content-Type: application/json
 Content-Length: 42
+Connection: keep-alive
 Access-Control-Allow-Origin: *
 Vary: Cookie
-Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCPkdA.YJ7Y60tNXfrMLViL6nqRG16Ep5k; HttpOnly; Path=/
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9Vw.TEk9MzRgYWUiremHmxvrAlsWqdk; HttpOnly; Path=/
 
 {"message":"User logged in successfully"}
 
-HTTP/1.1 401 UNAUTHORIZED
-Server: gunicorn
-Date: Wed, 14 May 2025 00:31:52 GMT
-Connection: keep-alive
-Content-Type: application/json
-Content-Length: 31
-Access-Control-Allow-Origin: *
-
-{"error":"JWT token required"}
-
 HTTP/1.1 200 OK
-Server: gunicorn
-Date: Wed, 14 May 2025 00:31:55 GMT
-Connection: keep-alive
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:24:09 GMT
 Content-Type: application/json
-Content-Length: 185
+Content-Length: 186
+Connection: keep-alive
 Access-Control-Allow-Origin: *
 Vary: Cookie
 
-{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhIiwiZG9tIjo0MDEsImlhdCI6MTc0NzE4MjcxNS45NTYwNSwiZXhwIjoxNzQ3MTgzMzE1Ljk1NjAzOX0.jHR71n9xibHJdynB_PtDwQi36rzJU4t_uqugzYTIQjY"}
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhIiwiZG9tIjo0MDEsImlhdCI6MTc0NzIyMTg0OS43MjI1NDksImV4cCI6MTc0NzIyMjQ0OS43MjI1MzZ9.CWSj7lRpPPMzkiJHsVEG7iDQC4OwXdsPnAY-9wRwh4U"}
 
 HTTP/1.1 200 OK
-Server: gunicorn
-Date: Wed, 14 May 2025 00:31:59 GMT
-Connection: keep-alive
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:24:12 GMT
 Content-Type: application/json
-Content-Length: 63
+Content-Length: 107
+Connection: keep-alive
 Access-Control-Allow-Origin: *
 Vary: Cookie
-Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCPkfw.T-X0du19qUtuNLuPQF8BHrcu2dM; HttpOnly; Path=/
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9XA.VQckBeE7g5wYNQ8k4rwwboBpyuo; HttpOnly; Path=/
 
-{"collections":[{"id":2863,"owner":"a","title":"colectie A"}]}
+{"collections":[{"id":2863,"owner":"a","title":"colectie A"},{"id":3499,"owner":"a","title":"colecie B"}]}
+
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:24:21 GMT
+Content-Type: application/json
+Content-Length: 197
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9ZQ.TRbiH2-f3fkGBFvLqEkBkRk85Dk; HttpOnly; Path=/
+
+{"movies":[{"id":9806,"title":"asd"},{"id":9846,"title":"The"},{"id":9852,"title":"The Dark Knight\n"},{"id":9853,"title":"doua cuvinte\n"},{"id":9854,"title":"a a\n"},{"id":9855,"title":"q  w"}]}
+
+HTTP/1.1 201 CREATED
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:24:33 GMT
+Content-Type: application/json
+Content-Length: 54
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9cQ.J2KOltJFtZdbyj__LjaBILjy6Ew; HttpOnly; Path=/
+
+{"id":3538,"movies":[],"title":"colectie cu 2 filme"}
+
+HTTP/1.1 201 CREATED
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:24:43 GMT
+Content-Type: application/json
+Content-Length: 53
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9ew.6IDiRM0FaN7pxyWD1lQETWwiNdc; HttpOnly; Path=/
+
+{"message":"Movie added to collection successfully"}
+
+HTTP/1.1 201 CREATED
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:24:49 GMT
+Content-Type: application/json
+Content-Length: 53
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9gQ._oVTPDheisGR65vASgJ9XKhEq1c; HttpOnly; Path=/
+
+{"message":"Movie added to collection successfully"}
+
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:25:16 GMT
+Content-Type: application/json
+Content-Length: 161
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9nA.tI0XHMKfzYrDbE0pIz0tmTa9_xQ; HttpOnly; Path=/
+
+{"collections":[{"id":2863,"owner":"a","title":"colectie A"},{"id":3499,"owner":"a","title":"colecie B"},{"id":3538,"owner":"a","title":"colectie cu 2 filme"}]}
+
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Wed, 14 May 2025 11:25:23 GMT
+Content-Type: application/json
+Content-Length: 118
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Vary: Cookie
+Set-Cookie: session=eyJhZG1pbl91c2VyX2lkIjo0MDEsInJvbGUiOiJ1c2VyIiwidXNlcm5hbWUiOiJhIn0.aCR9ow.XJy2dYS1Rh5gvS0TszSbtEqdtbI; HttpOnly; Path=/
+
+{"id":3538,"movies":[{"id":9806,"title":"asd"},{"id":9855,"title":"q  w"}],"owner":"a","title":"colectie cu 2 filme"}
 
