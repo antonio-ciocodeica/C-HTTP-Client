@@ -31,5 +31,13 @@ char *extract_cookie(char *str);
 // extracts a JWT token from a server response
 char *extract_jwt(char *str);
 
+// reads from stdin and checks if it's the value is an int
+int read_int(int *n);
+
+// reads from stdin and checks if it's the value is a float
+int read_float(float *n);
+
+// reads from stdin and checks if the username/password is valid
+int read_user(char *str);
 
 #endif

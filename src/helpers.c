@@ -171,3 +171,36 @@ char *extract_jwt(char *str) {
     strncpy(jwt, start, size);
     return jwt;
 }
+
+int read_int(int *n) {
+    char new_line;
+    int ret = scanf("%d%c", n, &new_line);
+
+    if (ret != 2 || new_line != '\n') {
+        return -1;
+    }
+
+    return 0;
+}
+
+int read_float(float *n) {
+    char new_line;
+    int ret = scanf("%f%c", n, &new_line);
+
+    if (ret != 2 || new_line != '\n') {
+        return -1;
+    }
+
+    return 0;
+}
+
+int read_user(char *str) {
+    fgets(str, BUFLEN, stdin);
+    str[strlen(str) - 1] = '\0';
+
+    if (strchr(str, ' ')) {
+        return -1;
+    }
+
+    return 0;
+}
