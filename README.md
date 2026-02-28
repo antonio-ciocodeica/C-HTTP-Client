@@ -1,56 +1,35 @@
-# PCom HTTP Client Checker
+# C HTTP Client
 
-This repository contains checker for the PCom HTTP client homework.
+C HTTP Client is a lightweight HTTP client implemented in C, designed to interact with web servers and RESTful APIs. It supports GET, POST, PUT, and DELETE requests, including handling JSON and URL-encoded payloads. This project demonstrates low-level socket programming, HTTP protocol handling, and basic API communication.
 
-## Prerequisites
+## Features
 
-Dependencies:
+- Send `HTTP` `GET`, `POST`, `PUT`, `DELETE` requests.
+- Support for `JSON` and `URL-encoded` payloads.
+- Command-line interface for interacting with `APIs`.
+- Error handling for invalid requests and responses.
 
-- Python >= 3.7;
-- [`pexpect`](https://pexpect.readthedocs.io/en/stable/) (third party package for console automation);
-- [`pyyaml`](https://pypi.org/project/PyYAML/) (third party package for YAML);
+## Technologies Used
 
-It is highly recommended to use a VirtualEnv, either by using the bundled
-Makefile or by manually installing the dependencies:
-```sh
-# symply run:
-make
-# this will do the same as:
-python3 -mvenv .venv
-.venv/bin/python3 -mpip install -r requirements.txt
-# Note: you need to source activate each time you start a new terminal
-source .venv/bin/activate
+- `C` programming language
+- `POSIX` sockets for network communication
+- Standard libraries for `string parsing` and `memory management`
+- `Makefile` for build automation
+
+## Project Structure
+
+```
+C-HTTP-Client/
+├── src/                 # C source files
+├── Makefile             # Build automation
+├── README.md            # Project overview
 ```
 
-### Usage
+## Learning Outcomes
 
-Invoke the checker on your client's compiled executable:
+This project demonstrates practical skills in:
 
-```sh
-# !!! don't forget to source .venv/bin/activate !!!
-# first, read the tool's internal help:
-python3 checker.py --help 
-# run the checker using default settings:
-python3 checker.py ../path/to/client
-# you MUST supply a valid admin user & password!
-python3 checker.py --admin 'myadminuser:hunter2' ../path-to/client
-```
-
-The default test script uses the admin user to create a random normal test user.
-This will ensure a clean slate while doing all other tests (since the server 
-persists all edits inside a database).
-
-Alternately, you can use e.g., `--script CLEANUP` if you have a functioning
-implementation for `get_users` and `delete_user` to quickly cleanup your
-associated users & other database items.
-
-Also make sure to check out [the source code](./checker.py) for the
-actual details about the script(s) being tested.
-
-<span style="color: #A33">**Warning**: This _alpha version!_ script is just an 
-instrument used by our team to automate the homework verification process.
-If any bugs affecting its effectiveness are found, we reserve the right to
-correct them at any time (you will be notified when this is the case).
-When in doubt, use the homework text as the rightful source of truth and use the
-Moodle Forum to ask any questions.
-</span>
+- `Socket` programming and network communication in C.
+- Understanding the `HTTP protocol`.
+- Parsing and constructing `HTTP requests and responses`.
+- Working with `JSON` and `URL-encoded` data in C.
