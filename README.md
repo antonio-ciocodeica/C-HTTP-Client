@@ -22,7 +22,7 @@ C HTTP Client is a lightweight HTTP client implemented in C, designed to interac
 C-HTTP-Client/
 ├── src/                 # C source files
 ├── Makefile             # Build automation
-├── README.md            # Project overview
+└── README.md            # Project overview
 ```
 
 ## Learning Outcomes
